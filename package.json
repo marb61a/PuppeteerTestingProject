@@ -1,0 +1,30 @@
+{
+  "name": "puppeteertestingproject",
+  "version": "1.0.0",
+  "description": "Automated software testing with puppeteer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marb61a/PuppeteerTestingProject.git"
+  },
+  "keywords": [
+    "Puppeteer",
+    "Mocha",
+    "Chai",
+    "Automation"
+  ],
+  "author": "Martin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marb61a/PuppeteerTestingProject/issues"
+  },
+  "homepage": "https://github.com/marb61a/PuppeteerTestingProject#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1",
+    "puppeteer": "^5.2.1"
+  }
+}
