@@ -4,7 +4,7 @@
   "description": "Automated software testing with puppeteer",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests"
   },
   "repository": {
     "type": "git",
