@@ -36,6 +36,14 @@ describe('The second set of basic testing examples', () => {
         // the second is the value to be selected from the dropdown
         await page.select('#preferred-interface', 'JavaScript API');
 
+        // Using the textarea to type in comments which
+        // have been sent out to a variable, then click the submit button
+        // Then wait for the result message
+        const message = "Filling the box with some text";
+        await page.type('#comments', message);
+        await page.click('#submit-button');
+        await page.waitForSelector('.result-content');
+
         await page.waitFor(2000);
 
         await browser.close();
