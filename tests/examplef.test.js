@@ -21,10 +21,20 @@ describe('The seventh set of basic testing examples', () => {
         await page.setDefaultNavigationTimeout(15000);
     });
 
+    beforeEach(async function(){
+        // Runs before each test step
+
+    });
+
     // Will be ran after tests
     after(async function() {
         await browser.close();
-    })
+    });
+
+    afterEach(async function(){
+        // Runs after each test step
+
+    });
 
     it('should launch the browser', async function() {
         await page.goto('http://example.com');
