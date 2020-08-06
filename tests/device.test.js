@@ -23,4 +23,28 @@ describe('Device Emulation', () => {
     after(async function() {
         await browser.close();
     });
+
+    it('Desktop device test', async function() {
+        await page.setViewport({
+            width: 1650,
+            height: 1050
+        });
+        await page.goto('http://example.com');
+        await page.waitFor(5000);
+    });
+
+    it('Tablet device test', async function() {
+        const tablet = puppeteer.devices['iPad landscape'];
+        await page.emulate(tablet);
+        await page.goto('http://example.com');
+        await page.waitFor(5000);
+    });
+
+    it('Mobile device test', async function() {
+        const mobile = puppeteer.devices['iPhone X'];
+        await page.emulate(mobile);
+        await page.goto('http://example.com');
+        await page.waitFor(5000);
+    });
+
 });
