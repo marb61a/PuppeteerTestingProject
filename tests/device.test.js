@@ -14,7 +14,10 @@ describe('Device Emulation', () => {
             args: ['--start-maximized']
         });
 
-        page = await browser.newPage();
+        // Creates a new context to allow for incognito\anoymous browser mode
+        // will not be available in headless mode
+        const context = await browser.createIncognitoBrowserContext();
+        page = await context.newPage();
 
         await page.setDefaultTimeout(10000);
         await page.setDefaultNavigationTimeout(15000);
