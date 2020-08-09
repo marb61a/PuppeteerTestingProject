@@ -5,6 +5,9 @@ const expect = require('chai').expect;
 const { click } = require('../lib/helpers');
 const { getText } = require('../lib/helpers');
 const { getCount } = require('../lib/helpers');
+const { shouldNotExist } = require('../lib/helpers');
+const { waitForText } = require('../lib/helpers');
+const { typeText } = require('../lib/helpers');
 
 describe('The seventh set of basic testing examples', () => {
     let browser;
@@ -58,9 +61,8 @@ describe('The seventh set of basic testing examples', () => {
         await page.goto('http://zero.webappsecurity.com/index.html');
         await click(page, '#signin_button');
         await page.waitFor(() => !document.querySelector('#signin_button'));    
-        await page.waitForSelector('#signin_button', {
-            hidden: true,
-            timeout: 3000
-        });
+
+        await page.waitFor(2000);
+        await shouldNotExist(page, '#signin_button');
     });
 });
