@@ -25,14 +25,26 @@ describe('Feedback Test', () => {
     });
 
     it('Display Feedback Form', async function(){
+        await page.goto('http://zero.webappsecurity.com/index.html');
+        await page.waitForSelector('#feedback');
+        await page.click('#feedback');
 
     });
 
     it('Submit Feedback Form', async function(){
+        await page.waitForSelector('form');
+        await page.type('#name', 'Name');
+        await page.type('#email', 'test@example.com');
+        await page.type('#subject', 'Subject');
+        await page.type('#comment', 'Just a test message for the textarea');
 
+        await page.click('input[type="submit"]');
     });
 
     it('Display Results Page', async function(){
+        await page.waitForSelector('#feedback-title');
+        const url = await page.url();
+        expect(url).to.include('/sendFeedback.html');
 
     });
 });
